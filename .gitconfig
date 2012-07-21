@@ -1,0 +1,26 @@
+[user]
+	name = Brad Harris
+	email = bharris@yahoo-inc.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	ui = true
+[alias]
+        co = checkout
+        st = status
+        ci = commit
+        search = grep --color -n
+        last = log -1 --decorate
+        lg = log --graph --date-order --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %Cblue(%an)%Creset %s %Cgreen(%ar)%Creset'
+        day = log --graph --date-order --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %Cblue(%an)%Creset %s %Cgreen(%ar)%Creset' --since=yesterday
+        week = log --graph --date-order --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %Cblue(%an)%Creset %s %Cgreen(%ar)%Creset' --since='last week'
+        month = log --graph --date-order --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %Cblue(%an)%Creset %s %Cgreen(%ar)%Creset' --since='last month'
+	ready = "!sh -c 'tmp=`git name-rev --name-only "$(git rev-parse ${1:-HEAD})"`; git lg ${tmp##svn/}..${1:-HEAD}' -"
+        files = "!sh -c 'git log --oneline --name-status ${*} | egrep \"^[ADM]\" | sort -u' -"
+        test = "!sh -c 'echo \"${*}\"' -"
+[diff]
+[mergetool]
+	keepBackup = false
+[push]
+	default = tracking
