@@ -1,0 +1,20 @@
+{
+    "color_scheme": "Packages/Color Scheme - Default/Monokai-L.tmTheme",
+    
+    "margin": 4,
+
+    "tab_size": 2,
+
+    "draw_centered": false,
+
+    "highlight_line": true,
+
+    "trim_trailing_white_space_on_save": false,
+
+    "ensure_newline_at_eof_on_save": false,
+
+    "highlight_modified_tabs": true,
+
+    "bold_folder_labels": true
+
+}
