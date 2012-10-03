@@ -1,5 +1,5 @@
 
-dule (Component) Loading
+Module (Component) Loading
 
 ---
 
