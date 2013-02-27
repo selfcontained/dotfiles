@@ -1,0 +1,65 @@
+# Web Components
+
+---
+
+## Principles of Web Components (*this isn't new stuff*)
+
++  **Encapsulation** - clear lines between component code, and consuming code that uses your component
++	**Reuseable** "widgets"
++	**Custom elements** - extend HTML/DOM (Shadow Dom)
++	**Create on-demand clientside**
+
+
+	*&lt;video&gt; tag* [example](http://www.html5rocks.com/en/tutorials/video/basics/)
+
+## Key pieces of Web Components
+
++	data
++	templates ( <template></template> )
+	+	self-contained, minimal logic
++	styles
+	+	scoped to component only
++	behavior
++	dom/event binding
+	+	glue between *templates* and *behavior*
+
+## Device-aware components
+
++	gracefully handle different platforms at a component level
+	+	phone, desktop, table, etc.
+	+	component decides if it has different template/behavior/styles/event handling for devices
+
+---
+
+## Servern Side Web Components
+
++	Assemble the same components server-side
+	+	deliver fully assembled html to client
++	abstract where server differs from client
+	+	data
+		+	server = http requests
+		+	client = xhr requests
+	+	styles
+		+	server = append to payload / single rollup stylesheet
+		+	client = load stylesheet
+	+	behavior + event binding
+		+	server = deliver scripts in payload to be eval'd
+		+	client = load script tag
++	a way to handle templates that include **components**
+
+```
+
+	<div>
+
+		<content-body data-uuid="1234-asdf" />
+
+		<share-tools data-uuid="1234-asdf" />
+
+	</div>
+```
+
++	main layout is also just a component
+	+	device/platform aware
+		+	allows custom layouts for desktop vs phone
+		+	reuses same components
+
